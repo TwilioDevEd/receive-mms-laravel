@@ -1,0 +1,4 @@
+.vendor
+sessions
+.env
+.sqlite
