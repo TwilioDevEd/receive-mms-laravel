@@ -7,7 +7,5 @@ env:
     - DOCKER_REPOSITORY=twiliodeved/receive-mms-laravel
 before_install:
   - docker --version
-install:
-  - docker build -t ${DOCKER_REPOSITORY} .
 script:
-  - docker run ${DOCKER_REPOSITORY} phpunit
+  - docker build -t ${DOCKER_REPOSITORY} .
