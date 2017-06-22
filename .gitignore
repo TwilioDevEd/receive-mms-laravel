@@ -12,4 +12,3 @@ npm-debug.log
 *.sqlite
 *.lock
 .php_cs.cache
-

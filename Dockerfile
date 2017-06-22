@@ -38,6 +38,7 @@ WORKDIR $HOME
 
 RUN composer global require "laravel/installer" "friendsofphp/php-cs-fixer"
 
+
 USER root
 
 ENV PATH="$HOME/.composer/vendor/bin:$HOME/src/vendor/bin:${PATH}"
@@ -46,12 +47,17 @@ COPY . ./src
 
 WORKDIR $HOME/src
 
+RUN composer install
+
 RUN touch ./database/database.sqlite && \
     php artisan migrate --force
+
+RUN cp .env-example .env
+
+RUN phpunit
 
 ENV PORT 8000
 
 EXPOSE $PORT
-
 
 CMD ./start.sh
