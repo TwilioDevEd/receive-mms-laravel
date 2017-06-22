@@ -74,35 +74,6 @@ You can run the tests locally by typing
 phpunit
 ```
 
-## With Docker
-
-1. Copy the sample configuration file and edit it to match your configuration
-
-   ```bash
-   $ cp .env-example .env
-   ```
-   You can find your `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
-   [Twilio Account Settings](https://www.twilio.com/console).
-   You will also need a `TWILIO_NUMBER`, which you may find [here](https://www.twilio.com/console/phone-numbers/incoming).
-
-
-   ```
-   docker run --env-file .env -it twiliodeved/receive-mms-laravel
-   ```
-
-   You will see the ngrok status console with your given url. Copy this url and set it as
-   your incoming SMS webhook in your [twilio console](twilio.com/console.). The
-   incoming SMS webhook url for your number should be as follows:
-  `https://<given-ngrok-domain>/api/incoming`
-
-  Finally, open the ngrok link in your browser. (`https://<given-ngrok-domain>`)
-
-  Local development:
-
-  ```
-  docker run --env-file .env -it -v $PWD:/home/dev/src twiliodeved/receive-mms-laravel
-  ```
-
 ## Meta
 
 * No warranty expressed or implied. Software is as is. Diggity.
