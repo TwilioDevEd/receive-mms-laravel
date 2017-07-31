@@ -7,8 +7,7 @@
 [![Build
 Status](https://travis-ci.org/TwilioDevEd/receive-mms-laravel.svg?branch=master)](https://travis-ci.org/TwilioDevEd/receive-mms-laravel)
 
-#TODO: update this link
-Use Twilio to receive SMS and MMS messages. For a step-by-step tutorial see [twilio docs](https://www.twilio.com/docs/tutorials/walkthrough/appointment-reminders/node/express).
+Use Twilio to receive SMS and MMS messages. For a step-by-step tutorial see the [Twilio docs](https://www.twilio.com/docs/guides/receive-and-download-images-incoming-mms-messages-php-laravel).
 
 ## Local development
 
