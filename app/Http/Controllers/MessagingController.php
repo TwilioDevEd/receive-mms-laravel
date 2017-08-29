@@ -62,11 +62,11 @@ class MessagingController extends Controller
 
         $response = new Twiml();
         $messageBody = $NumMedia == 0 ? 'Send us an image!' : "Thanks for the $NumMedia images.";
-        $response->message([
+        $message = $response->message([
           'from' => $FromNumber,
-          'to' => $FromNumber,
-          'body' => $messageBody
+          'to' => $FromNumber
         ]);
+        $message->body($messageBody);
 
         return (string)$response;
     }
