@@ -62,8 +62,8 @@ class IncomingSMSTest extends TestCase
 
         $response->assertSee(
           "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" .
-          "<Response><Message from=\"+1707XXXXXXX\" to=\"+1707XXXXXXX\"" .
-          " body=\"Thanks for the 1 images.\"/></Response>");
+          "<Response><Message from=\"+1707XXXXXXX\" to=\"+1707XXXXXXX\">" .
+          "<Body>Thanks for the 1 images.</Body></Message></Response>");
     }
 
     public function testCorrectTwimlResponseWhenNoMediaIsSent()
@@ -74,8 +74,8 @@ class IncomingSMSTest extends TestCase
 
         $response->assertSee(
           "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" .
-          "<Response><Message from=\"+1707XXXXXXX\" to=\"+1707XXXXXXX\"" .
-          " body=\"Send us an image!\"/></Response>");
+          "<Response><Message from=\"+1707XXXXXXX\" to=\"+1707XXXXXXX\">" .
+          "<Body>Send us an image!</Body></Message></Response>");
     }
 
     public function testGetAllMedia()
