@@ -9,6 +9,12 @@ Status](https://travis-ci.org/TwilioDevEd/receive-mms-laravel.svg?branch=master)
 
 Use Twilio to receive SMS and MMS messages. For a step-by-step tutorial see the [Twilio docs](https://www.twilio.com/docs/guides/receive-and-download-images-incoming-mms-messages-php-laravel).
 
+## Note: protect your webhooks
+
+Twilio supports HTTP Basic and Digest Authentication. Authentication allows you to password protect your TwiML URLs on your web server so that only you and Twilio can access them.
+
+Learn more about HTTP authentication [here](https://www.twilio.com/docs/usage/security#http-authentication), which includes sample code you can use to secure your web application by validating incoming Twilio requests.
+
 ## Local development
 
 First you need to install [PHP](http://php.net/) and [Composer](https://getcomposer.org/).
