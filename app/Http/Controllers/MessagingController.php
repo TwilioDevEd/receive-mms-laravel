@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\MMSMedia;
+use App\Services\MediaMessageService\IMediaMessageService;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -39,7 +40,7 @@ class MessagingController extends Controller
         $this->twilio = new Client($this->accountSid, $authToken);
     }
 
-    public function handleIncomingSMS(Request $request)
+    public function handleIncomingSMS(Request $request, IMediaMessageService $mediaService)
     {
         $converter = new MimeTypeConverter;
         $NumMedia = (int)$request->input('NumMedia');
@@ -52,7 +53,8 @@ class MessagingController extends Controller
             $fileExtension = $converter->toExtension($MIMEType);
             $mediaSid = basename($mediaUrl);
 
-            $media = file_get_contents($mediaUrl);
+            $media = $mediaService->getMediaContent($mediaUrl);
+
             $filename = "$mediaSid.$fileExtension";
 
             $mediaData = compact('mediaSid', 'MessageSid', 'mediaUrl', 'media', 'filename', 'MIMEType');
