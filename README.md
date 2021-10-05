@@ -46,6 +46,14 @@ To run the app locally:
 
    Run `source .env` to export the environment variables
 
+
+1. Generate application key
+
+    ```bash
+    php artisan key:generate
+    ```
+
+
 1. Create database file and run migrations:
     ```bash
     touch ./database/database.sqlite && \
