@@ -9,7 +9,7 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "magyarjeti/mime-types": "^1.0",
-        "twilio/sdk": "^5.11"
+        "twilio/sdk": "^8.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
